@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 13px;
+  font-family: $font-primary;
+  line-height: 20px;
+  color: $color-primary-text;
+}
+
+a {
+  color: $color-primary-link;
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  &.active {
+    color: red;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.pos-absolute-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.flex-wrapper {
+  @include flexbox();
+
+  .flex-item {
+    @include flex();
+  }
+
+  .flex-2 {
+    @include flex($values:2);
+  }
+
+  .flex-3 {
+    @include flex($values:3);
+  }
+
+  .flex-4 {
+    @include flex($values:4);
+  }
+}

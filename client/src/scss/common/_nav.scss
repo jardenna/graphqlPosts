@@ -1,0 +1,28 @@
+.nav {
+  ul {
+    list-style: none;
+  }
+}
+
+.nav-horizontal {
+  ul {
+    display: flex;
+    padding: 0;
+
+    &.text-right {
+      justify-content: flex-end;
+    }
+
+    &.text-left {
+      justify-content: flex-start;
+    }
+  }
+
+  li {
+    margin-right: 10px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}

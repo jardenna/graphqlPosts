@@ -1,0 +1,82 @@
+.icon-heart {
+  position: absolute;
+  z-index:: 3;
+
+  &:before {
+    content: '';
+    width: 14px;
+    height: 9px;
+    background-color: $color-primary-link;
+    @include rotate();
+    @include borderRadius(6px, 0,0,6px);
+    position: absolute;
+  }
+
+  &:after {
+    content: '';
+    width: 14px;
+    height: 9px;
+    background-color: $color-primary-link;
+    @include borderRadius(6px, 0,0,6px);
+    position: absolute;
+    left: 4px;
+    @include rotate(135deg);
+  }
+}
+
+.icon-comment {
+  position: absolute;
+  z-index:: 3;
+
+  &:after {
+    content: '';
+    @include triangle($size:7px, $dir:left);
+    left: 5px;
+    top: 2px;
+  }
+
+  &:before {
+    content: '';
+    width: 16px;
+    height: 10px;
+    @include borderRadius();
+    position: absolute;
+    background-color: $color-primary-link;
+  }
+}
+
+.icon-trash {
+  position: absolute;
+  z-index: 3;
+  left: 6px;
+  width: 5px;
+  height: 7px;
+  border-right: 3px double #c55500;
+  border-left: 1px solid #c55500;
+  margin-top: -2px;
+
+  &:before {
+    content: '';
+    left: -5px;
+    top: 1px;
+    width: 9px;
+    height: 11px;
+    margin-top: -6px;
+    border: 2px solid #c55500;
+    background: transparent;
+    position: absolute;
+  }
+
+  &:after {
+    content: '';
+    width: 3px;
+    height: 2px;
+    left: -2px;
+    top: -9px;
+    border: 2px solid #c55500;
+    border-bottom: 0;
+    background: transparent;
+    @include borderRadius();
+    position: absolute;
+  }
+}

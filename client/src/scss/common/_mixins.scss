@@ -1,0 +1,123 @@
+@mixin mQ($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+@mixin arrow($size: 20px, $color:green) {
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: $size;
+  border-top-color: $color;
+}
+@mixin circle($size: 20px) {
+  width: $size;
+  height: $size;
+  border-radius: $size / 2;
+}
+@mixin triangle($size:20px, $color:$color-primary-link, $dir:up) {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: $size;
+  @if $dir == down {
+    border-top-color: $color;
+  } @else 
+  if $dir == up {
+    border-bottom-color: $color;
+  } @else 
+  if $dir == left {
+    border-left-color: $color;
+  } @else 
+  if $dir == right {
+    border-right-color: $color;
+  }
+}
+@mixin chevron($size: 20px, $weight:3px, $color:$color-white, $dir:up) {
+  width: $size;
+  height: $size;
+  border: $weight solid $color;
+  @include rotate(45deg);
+  @if $dir == up {
+    border-bottom: transparent;
+    border-right: transparent;
+  } @else 
+  if $dir == down {
+    border-top: transparent;
+    border-left: transparent;
+  } @else 
+  if $dir == right {
+    border-bottom: transparent;
+    border-left: transparent;
+  } @else 
+  if $dir == left {
+    border-top: transparent;
+    border-right: transparent;
+  }
+}
+@mixin border($direction,$color:$color-border) {
+  border-#{$direction}: 1px solid $color;
+}
+@mixin borderRadius($top: 2px, $right: 2px, $bottom: 2px, $left: 2px) {
+  -webkit-border-top-left-radius: $left;
+  -webkit-border-bottom-left-radius: $left;
+  -moz-border-radius: $top $right $bottom $left;
+  border-radius: $top $right $bottom $left;
+}
+@mixin rotate($deg:45deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+@mixin opacity($opacity: 0.8) {
+  opacity: $opacity;
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  -o-opacity: $opacity;
+  filter: alpha(opacity = 80);
+}
+@mixin inline ($width:50%) {
+  display: inline-block;
+  width: $width;
+}
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin flex($values:1, $basis: 30%, $grow: 0, $margin:30px) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+  margin-right: $margin;
+  position: relative;
+  flex-basis: $basis;
+  flex-grow: $grow;
+
+  &:last-child {
+    margin-right: 0;
+  }
+  @include mQ(700px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+@mixin transition($what: all, $time: 0.5s, $how: ease-in-out) {
+  -webkit-transition: $what $time $how;
+  -moz-transition: $what $time $how;
+  -ms-transition: $what $time $how;
+  -o-transition: $what $time $how;
+  transition: $what $time $how;
+}

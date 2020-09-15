@@ -1,0 +1,62 @@
+button {
+  outline: none;
+  border: 0;
+  padding: 10px;
+  font-weight: 700;
+  min-width: 150px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: inline-block;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.btn-basic,
+a.btn-basic {
+  background: none;
+  border: 1px solid $color-border;
+}
+
+.btn-primary,
+a.btn-primary {
+  background-color: $color-primary-btn;
+  color: $color-white;
+  @include transition();
+
+  &:hover {
+    background-color: $color-primary-btn-hover;
+  }
+}
+
+.btn-danger {
+  background-color: $color-danger;
+  color: $color-white;
+  @include transition();
+
+  &:hover {
+    background-color: $color-red-light;
+  }
+}
+
+a[class^="btn"] {
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 700;
+  min-width: 150px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.btn-close {
+  &:after {
+    content: "+";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 19px;
+    font-weight: 500;
+    @include rotate();
+  }
+}

@@ -1,0 +1,50 @@
+.card {
+  margin-bottom: 20px;
+  position: relative;
+  border: 1px solid $color-border;
+}
+
+.card-content {
+  padding-bottom: 5rem;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.card-horizontal {
+  img {
+    max-width: 50px;
+  }
+
+  figure {
+    @include flex($grow: 1, $basis: 14%);
+    margin: 0;
+  }
+
+  .card-header {
+    @include flexbox();
+    padding: 10px;
+
+    .header-info {
+      @include flex($grow: 1, $basis: 67%);
+    }
+  }
+  // .card-text {
+  //   width: auto;
+  //   @include mQ(800px) {
+  //     white-space: nowrap;
+  //     overflow: hidden;
+  //     text-overflow: ellipsis;
+  //     width: 460px;
+  //   }
+  // }
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    height: 3.7rem;
+    width: 100%;
+    text-align: right;
+    padding-top: 12px;
+    padding-right: 10px;
+    @include border(top);
+  }
+}

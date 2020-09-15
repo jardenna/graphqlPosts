@@ -1,0 +1,66 @@
+.select-wrapper {
+  border: 1px solid $color-gray-light;
+  border-radius: 10px;
+  background-color: $color-white;
+
+  form {
+    margin-bottom: 10px;
+  }
+
+  &.hidden {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.select-options {
+  padding: 20px;
+
+  &:focus,
+  &:hover {
+    background-color: $color-green-dark;
+    outline: none;
+
+    .select-info {
+      border: none;
+    }
+
+    .select-icon {
+      background-color: $color-gray;
+    }
+
+    a.select-mail {
+      color: $color-gray-light;
+    }
+  }
+}
+
+a.select-mail {
+  color: $color-primary-link;
+  text-decoration: none;
+  @include transition($time: 0.2s);
+
+  &:hover {
+    color: $color-gray;
+  }
+}
+
+.select-icon {
+  display: inline-block;
+  color: #fff;
+  background-color: $color-green;
+  padding: 20px;
+  border-radius: 9px;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+.select-info {
+  border-bottom: 1px solid $color-gray-lighter;
+  padding-bottom: 20px;
+}
+
+.select-name {
+  display: inline-block;
+}

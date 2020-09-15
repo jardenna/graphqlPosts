@@ -1,0 +1,66 @@
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px white inset;
+}
+
+form {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid $color-gray-dark;
+  color: $color-gray-darker;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.inputfile {
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.inputfile + label {
+  position: absolute;
+  bottom: 6px;
+  background-color: $color-gray-darker;
+  left: 0;
+  height: 41px;
+  padding: 10px 5px;
+  width: 72px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+  color: $color-white;
+  @include transition();
+
+  &:hover {
+    background-color: $color-gray;
+  }
+}
+
+.file-wrapper {
+  position: relative;
+}
+
+.input-wrapper {
+  position: relative;
+}
